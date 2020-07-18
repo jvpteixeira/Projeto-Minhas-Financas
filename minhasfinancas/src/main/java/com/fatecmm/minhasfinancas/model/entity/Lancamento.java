@@ -3,17 +3,10 @@ package com.fatecmm.minhasfinancas.model.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.persistence.Column;
-import javax.persistence.Convert;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import lombok.Builder;
@@ -25,11 +18,13 @@ import model.enums.TipoLancamento;
 @Table(name="lancamento",schema="financas")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Lancamento {
 	
 	@Id
-	@GeneratedValue
 	@Column(name= "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "descricao")

@@ -1,5 +1,6 @@
 package com.fatecmm.minhasfinancas.service.impl;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import javax.security.sasl.AuthenticationException;
@@ -49,5 +50,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 			throw new BusinessRuleException("There's a record user with this email");
 		}
 	}
-	
+
+	@Override
+	public Optional<Usuario> obterPorId(Long id) {
+		return repository.findById(id);
+	}
+
+
 }

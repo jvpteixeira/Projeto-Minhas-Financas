@@ -11,6 +11,5 @@ public class MinhasfinancasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MinhasfinancasApplication.class, args);
-		long teste;
 	}
 }
