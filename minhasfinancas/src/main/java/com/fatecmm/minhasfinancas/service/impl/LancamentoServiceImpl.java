@@ -19,7 +19,6 @@ import java.util.Optional;
 @Service
 public class LancamentoServiceImpl implements LancamentoService {
 
-
     private LancamentoRepository repository;
 
     public LancamentoServiceImpl(LancamentoRepository repository){
@@ -103,7 +102,6 @@ public class LancamentoServiceImpl implements LancamentoService {
         if(despesas == null){
             despesas = BigDecimal.ZERO;
         }
-
         return receitas.subtract(despesas);
     }
 
