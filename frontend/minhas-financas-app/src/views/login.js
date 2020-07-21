@@ -7,6 +7,7 @@ class login extends React.Component{
       email : '',
       senha: ''
   }
+  
   entrar = () => {
     console.log('email:', this.state.email)
     console.log('senha:', this.state.senha)
