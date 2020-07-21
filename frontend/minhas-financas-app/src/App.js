@@ -1,13 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Login from './views/login'
 
-function App() {
-  return (
-    <div>
-      Primeiro Componente! ;) TCC está 1% pronto senhores
-    </div>
-  );
+import 'bootswatch/dist/flatly/bootstrap.css'
+import './custom.css'
+class App extends React.Component {
+
+  render(){
+    return(
+      <div>
+        <Login/>
+      </div>
+    )
+  }
 }
 
 export default App;
