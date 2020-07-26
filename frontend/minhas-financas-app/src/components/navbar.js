@@ -15,9 +15,8 @@ function Navbar(){
                         <NavbarItem href="#/home" label="Home"/>
                         <NavbarItem href="#/login" label="Login"/>
                         <NavbarItem href="#/cadastro-usuario" label="Cadastro"/>
-                        <NavbarItem href="#/" label="Lançamentos"/>
+                        <NavbarItem href="#/consulta-lancamentos" label="Lançamentos"/>
                     </ul>
-
                 </div>
             </div>
         </div>

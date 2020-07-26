@@ -52,7 +52,7 @@ class ConsultaLancamentos extends React.Component {
     }
 
     editar = (id) => {
-       console.log('ok')
+       this.props.history.push(`/cadastro-lancamento/${id}`)
     }
 
     abrirConfirmacao = (lancamento) => {
@@ -60,7 +60,6 @@ class ConsultaLancamentos extends React.Component {
     }
 
     deletar = () => {
-
         this.service
             .deletar(this.state.lancamentoDeletar.id)
             .then(response => {
@@ -77,6 +76,10 @@ class ConsultaLancamentos extends React.Component {
 
     cancelarDelecao = () => {
         this.setState({showConfirmDialog:false,lancamentoDeletar:{}})
+    }
+
+    preparaFormularioCadastro = () => {
+        this.props.history.push('/cadastro-lancamento')
     }
 
     render(){
@@ -133,7 +136,7 @@ class ConsultaLancamentos extends React.Component {
                             </FormGroup>
 
                             <button type="button" className="btn btn-success" onClick={this.buscar}>Buscar</button>
-                            <button type="button" className="btn btn-danger">Cadastrar</button>
+                            <button onClick={this.preparaFormularioCadastro}type="button" className="btn btn-danger">Cadastrar</button>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ class ApiService {
         return httpClient.post(requestURL,objeto);
     }
 
-    put(url,objeto){
+     put(url,objeto){
         const requestURL = `${this.apiUrl}${url}`
         return httpClient.put(requestURL,objeto);
     }
