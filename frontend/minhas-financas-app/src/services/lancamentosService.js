@@ -88,6 +88,10 @@ export default class lancamentoService extends ApiService{
         }
     }
 
+    alterarStatus(id,status){
+        return this.put(`/${id}/status`,{status})
+    }
+
     deletar(id){
         return this.delete(`/${id}`)
     }

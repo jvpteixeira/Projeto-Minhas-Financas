@@ -48,15 +48,13 @@ class CadastroLancamentos extends React.Component {
         const lancamento = {descricao,valor,mes,ano,tipo,usuario: usuarioLogado.id}
         
         try{
-            console.log(!lancamento.ano)
             this.service.validar(lancamento)
         } catch(erro){
             const mensagens = erro.mensagens;
             mensagens.forEach(msg => messages.mensagemErro(msg))
             return false;
         }
-        
-        
+        console.log(lancamento)
         this.service
             .salvar(lancamento)
             .then(response => {
@@ -157,14 +155,23 @@ class CadastroLancamentos extends React.Component {
                     <div className="col-md-6">
                         {this.state.atualizando ? 
                             (
-                                <button className="btn btn-primary" onClick = {this.atualizar}>Atualizar</button>
+                                <button className="btn btn-primary" 
+                                    onClick = {this.atualizar}>
+                                        <i className="pi pi-refresh" ></i>Atualizar
+                                    </button>
                             ) 
                             :
                             (
-                                <button className="btn btn-success" onClick = {this.submit}>Salvar</button>   
+                                <button className="btn btn-success" 
+                                    onClick = {this.submit}>
+                                       <i className="pi pi-save"></i> Salvar
+                                    </button>   
                             )
                         }
-                        <button onClick={e => this.props.history.push('/consulta-lancamentos')} className="btn btn-danger">Cancelar</button>
+                        <button onClick={e => this.props.history.push('/consulta-lancamentos')} 
+                            className="btn btn-danger">
+                                <i className="pi pi-times"></i> Cancelar
+                                </button>
                     </div>
                 </div>
             </Card>
