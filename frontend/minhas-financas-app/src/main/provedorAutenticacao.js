@@ -1,5 +1,6 @@
 import React from 'react'
 import AuthService from '../services/authService'
+
 export const AuthContext = React.createContext();
 export const AuthConsumer = AuthContext.Consumer;
 
